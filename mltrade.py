@@ -4,13 +4,6 @@ from tensorflow.keras import datasets, layers, models
 import csv
 import numpy as np
 
-
-
-
-
-
-
-
 def get_weekday_enc(d):
 	1+1 #use datetime package and mod 7 to get a weekday uncoding
 	#let's do this if we have time
@@ -24,14 +17,13 @@ def flatten(arr):
 			for j in flatten(i):
 				flat_arr.append(j)
 	return flat_arr
+
 def normalize(arr):
 	arr = flatten(arr)
 	return [i/sum(arr) for i in arr]
 
-
 def process_data(data): #process into percentages
 	p_data = []
-
 	for d in range(1,len(data)):
 		datapoint_open_close = normalize([data[d][1],data[d][4]])
 		datapoint_open_close_past = normalize([data[d-1][1],data[d-1][4]]) #might end up being redundant
@@ -43,8 +35,6 @@ def process_data(data): #process into percentages
 		p_data.append(flatten([datapoint_open_close, datapoint_open_close_past, datapoint_open_open,
 			datapoint_close_close, datapoint_day, datapoint_days]))
 	return p_data
-
-
 
 def make_dataset(data):
 	data = process_data(data)
@@ -69,12 +59,6 @@ def make_model(shape_in, shape_out, loss = 'mse'):
 	model.compile(optimizer='adam', loss=loss, metrics=['accuracy'])
 
 	return model
-
-
-
-
-
-
 
 dataset = []
 with open('data/SPY93-20.csv', newline='') as f:
