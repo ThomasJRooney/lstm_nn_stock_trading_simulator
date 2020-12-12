@@ -149,6 +149,7 @@ def trade(scaler, model, data):
         shares = 0
         in_trade = False
 
+    
     print(money)
 
 
