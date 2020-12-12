@@ -86,7 +86,7 @@ def trade(scaler, model, data):
     up = False
 
     start_date = date(2018, 7, 20)
-    end_date = date(2019, 1, 1)
+    end_date = date(2018, 10, 1)
     i = 0
     for single_date in daterange(start_date, end_date):
         #get date
@@ -149,11 +149,13 @@ def trade(scaler, model, data):
         shares = 0
         in_trade = False
 
-    
+    print("results:")
+    print("starting money")
+    print(10000)
+    print("ending money")
     print(money)
-
-
-
+    print("profit")
+    print(money - 10000)
 
 def visualize():
     plt.figure(figsize=(16,8))
