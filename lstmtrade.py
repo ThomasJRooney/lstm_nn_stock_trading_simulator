@@ -167,11 +167,14 @@ def visualize():
     #plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
     plt.show()
 
-def main():
+def do_trade():
     res = prepare_data('AAPL')
     model = train(res[0], res[1])
     pred = predict(res[2], model, res[3], res[4])
     trade(pred[0], pred[1], res[4])
+
+def main():
+    do_trade()
 
 if __name__ == "__main__":
     main()
