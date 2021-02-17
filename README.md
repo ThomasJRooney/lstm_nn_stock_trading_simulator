@@ -1,5 +1,1 @@
-# TradingStocks
-
-Works right now with historical data by executing python3 backtrade.py
-
-Need to create ML strategies
+Stock trading simulator using LSTM Neural Network to predict price and trade from the prediction. This is a simulated environment to proctect my API keys.
